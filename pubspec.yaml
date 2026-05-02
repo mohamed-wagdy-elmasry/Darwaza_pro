@@ -1,0 +1,85 @@
+name: darwaza_pro
+description: A new Flutter project.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  
+  # --- المكتبات ---
+  cupertino_icons: ^1.0.8
+  http: ^1.2.0
+  shared_preferences: ^2.2.2
+  uuid: ^4.3.3
+  google_fonts: ^8.1.0
+  font_awesome_flutter: ^10.7.0
+  mobile_scanner: ^5.2.3
+  flutter_blue_plus: ^2.1.1
+  permission_handler: ^12.0.1
+  flutter_secure_storage: ^10.0.0
+  qr_flutter: ^4.1.0
+  share_plus: ^7.2.2
+  crypto: ^3.0.3
+  firebase_core: ^4.5.0
+  firebase_messaging: ^16.1.2
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  change_app_package_name: ^1.1.0
+  # تأكد من أن النسخ متوافقة
+  flutter_launcher_icons: ^0.14.4 
+  flutter_native_splash: ^2.4.4
+
+# ==========================================
+# إعدادات فلاتر
+# ==========================================
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/app_icon.png
+    - assets/splash_center.png
+
+# ==========================================
+# 1. إعدادات الأيقونة (flutter_launcher_icons)
+# ==========================================
+# ==========================================
+# 1. إعدادات الأيقونة (App Icon)
+# ==========================================
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/app_icon.png" # صورتك المعدلة (ناعمة الحواف)
+  min_sdk_android: 21
+  
+  # للأندرويد الحديث (Adaptive Icon):
+  # سنجعل الخلفية سوداء، والصورة (اللوغو) تطفو فوقها
+  adaptive_icon_background: "#000000" 
+  adaptive_icon_foreground: "assets/app_icon.png"
+
+# ==========================================
+# 2. إعدادات السبلاش الأولى (Native Splash)
+# ==========================================
+flutter_native_splash:
+  # لون الخلفية الأسود (ليتطابق مع شاشة فلاتر التالية)
+  color: "#000000"
+  
+  # الصورة في الوسط (ستأخذ شكلها الجديد بحواف ناعمة)
+  image: assets/splash_center.png
+  
+  # لإلغاء وضع ملء الشاشة للحفاظ على شريط الحالة (اختياري، يفضل true)
+  fullscreen: true
+  
+  # إعدادات أندرويد 12+ (مهم جداً للظهور بشكل صحيح)
+  android_12:
+    image: assets/splash_center.png
+    icon_background_color: "#000000"

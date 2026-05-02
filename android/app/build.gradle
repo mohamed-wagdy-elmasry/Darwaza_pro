@@ -1,0 +1,70 @@
+plugins {
+    id "com.android.application"
+    // START: FlutterFire Configuration
+    id 'com.google.gms.google-services'
+    // END: FlutterFire Configuration
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+android {
+    namespace = "com.sandra.smartgate"
+    
+    // 🟢 التعديل المطلوب لمكتبة التشفير
+    compileSdk = 36 
+    
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    defaultConfig {
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        applicationId "com.marwan.darwazapro"
+        
+        // 🟢 رفع الحد الأدنى ليدعم التشفير (Android 7.0)
+        minSdk = 24 
+        
+        targetSdk = flutter.targetSdkVersion
+        
+        // 🛠️ الإصلاح هنا: العودة للصيغة التي يفهمها مشروعك
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+   signingConfigs {
+        release {
+            keyAlias = "upload"
+            keyPassword = "016743801"
+            storeFile = file('upload-keystore.jks')
+            storePassword = "016743801"
+        }
+    }
+    buildTypes {
+        release {
+            
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+          
+            signingConfig signingConfigs.release
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+flutter {
+    source = "../.."
+}
