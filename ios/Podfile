@@ -1,0 +1,32 @@
+# Set the platform to iOS 15.0 as required by Firebase
+platform :ios, '15.0'
+
+# CocoaPods analytics are disabled by default.
+disable_cocoapods_analytics!
+
+target 'Runner' do
+  use_frameworks!
+  use_modular_headers!
+
+  flutter_install_all_ios_pods File.dirname(File.expand_path(__FILE__))
+
+  target 'RunnerTests' do
+    inherit! :search_paths
+  end
+end
+
+post_install do |signer|
+  signer.development_team_configured_targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['SUPPORTED_PLATFORMS'] = 'iphoneos iphonesimulator'
+    end
+  end
+  
+  signer.pods_project.targets.each do |target|
+    flutter_additional_ios_pods(target)
+    target.build_configurations.each do |config|
+      # Force all plugins to use iOS 15.0 to match the main project
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+    end
+  end
+end
