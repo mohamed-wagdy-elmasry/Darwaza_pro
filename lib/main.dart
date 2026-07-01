@@ -36,7 +36,7 @@ void main() async {
   // تشغيل التطبيق فوراً
   runApp(SmartGateApp(initialLang: savedLang));
 }
-IconData getIconData(String? iconName) {
+FaIconData getIconData(String? iconName) {
   // إذا كان الاسم null أو غير موجود في القائمة، نرجع القلعة كافتراضي
   return fullIconMap[iconName] ?? FontAwesomeIcons.dungeon;
 }
