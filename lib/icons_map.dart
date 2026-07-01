@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // مكتبة موسعة جداً للأيقونات الشائعة
-final Map<String, IconData> fullIconMap = {
+final Map<String, FaIconData> fullIconMap = {
   // --- General ---
   'fa-house': FontAwesomeIcons.house,
   'fa-user': FontAwesomeIcons.user,
