@@ -49,11 +49,18 @@
 		<true/>
 		<key>UIViewControllerBasedStatusBarAppearance</key>
 		<false/>
+		
 		<key>NSBluetoothAlwaysUsageDescription</key>
-    <string>تطبيق دروازة برو يحتاج للبلوتوث للاتصال السريع بالبوابة وفتحها مباشرة.</string>
-    <key>NSBluetoothPeripheralUsageDescription</key>
-    <string>تطبيق دروازة برو يحتاج للبلوتوث للاتصال بالبوابة.</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>نحتاج الصلاحية للبحث عن بوابتك القريبة عبر البلوتوث.</string>
+		<string>تطبيق دروازة برو يحتاج للبلوتوث للاتصال السريع بالبوابة وفتحها مباشرة.</string>
+		<key>NSBluetoothPeripheralUsageDescription</key>
+		<string>تطبيق دروازة برو يحتاج للبلوتوث للاتصال بالبوابة.</string>
+		
+		<key>NSLocationWhenInUseUsageDescription</key>
+		<string>تطبيق دروازة برو يحتاج إلى صلاحية الموقع للبحث عن البوابات القريبة منك عبر البلوتوث.</string>
+		<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+		<string>تطبيق دروازة برو يحتاج إلى صلاحية الموقع لفتح البوابات القريبة بشكل تلقائي حتى عند تشغيل التطبيق في الخلفية.</string>
+
+		<key>NSCameraUsageDescription</key>
+		<string>تطبيق دروازة برو يحتاج إلى الوصول للكاميرا لمسح رمز الـ QR الخاص بإعدادات البوابة أو قراءة الكود.</string>
 	</dict>
 </plist>
