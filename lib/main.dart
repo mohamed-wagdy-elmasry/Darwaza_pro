@@ -3360,7 +3360,7 @@ Future<void> triggerPlatinumGate() async {
                       builder: (context) {
                         // تحديد الألوان والأيقونات والنصوص بناءً على حالة القفل
                         Color lockColor = isLocked ? dangerColor : Colors.amber;
-                        IconData lockIcon = isLocked ? FontAwesomeIcons.lock : FontAwesomeIcons.lockOpen;
+                        FaIconData lockIcon = isLocked ? FontAwesomeIcons.lock : FontAwesomeIcons.lockOpen;
                         String lockText = isLocked ? AppStrings.get(context, 'unlock_gate') : AppStrings.get(context, 'lock_gate');
                         
                         return BouncingButton(
